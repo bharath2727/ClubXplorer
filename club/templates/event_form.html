@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="mb-4">Create/Edit Event</h2>
+    <form action="{% url 'event_create' %}" method="post">
+        {% csrf_token %}
+        <div class="form-outline mb-4">
+            <input type="text" id="name" name="name" class="form-control" required />
+            <label class="form-label" for="name">Event Name</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
+            <label class="form-label" for="description">Event Description</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="date" id="date" name="date" class="form-control" required />
+            <label class="form-label" for="date">Event Date</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="time" id="time" name="time" class="form-control" required />
+            <label class="form-label" for="time">Event Time</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <select id="ground" name="ground" class="select form-control">
+                {% for ground in grounds %}
+                <option value="{{ ground.id }}">{{ ground.name }}</option>
+                {% endfor %}
+            </select>
+            <label class="form-label" for="ground">Select Ground</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <textarea id="promotion_details" name="promotion_details" class="form-control" rows="4"></textarea>
+            <label class="form-label" for="promotion_details">Promotion Details</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+</div>
+{% endblock %}

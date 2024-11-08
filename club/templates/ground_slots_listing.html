@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="mb-4">Booked Slots</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ground</th>
+                <th>Date</th>
+                <th>Time Slot</th>
+                <th>User</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for slot in booked_slots %}
+            <tr>
+                <td>{{ slot.ground.name }}</td>
+                <td>{{ slot.date|date:"Y-m-d" }}</td>
+                <td>{{ slot.time_slot }}</td>
+                <td>{{ slot.user.username }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

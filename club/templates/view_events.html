@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="mb-4">Upcoming Events</h2>
+    <div class="form-group mt-3">
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+    
+            <div class="alert {{ message.tags }}" role="alert">
+                {{ message }}
+            </div>
+    
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    <div class="row">
+        {% for event in events %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ event.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ event.date }} at {{ event.time }}</h6>
+                    <p class="card-text">{{ event.description }}</p>
+                    <p class="card-text"><small class="text-muted">Promotion Details: {{ event.promotion_details }}</small></p>
+                    <!-- Registration Button -->
+                    <a href="{% url 'register_for_event' event.id %}" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <p>No upcoming events.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <!-- Section: Introduction -->
+    <section class="text-center">
+        <h2 class="mb-5 font-weight-bold">Welcome to SportClub Central</h2>
+        <p class="text-muted">Your ultimate platform for sports club management, featuring intuitive ground booking and
+            comprehensive event management.</p>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8wdc4s7YNkjAW8BcVmwJAF1qR9vdhe80ZBw&usqp=CAU"
+                    class="img-fluid" alt="Welcome to SportClub Central">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Ground Booking -->
+    <section class="my-5">
+        <h3 class="h3 text-center mb-5">Ground Booking</h3>
+        <div class="row">
+            <!-- Adjusting col-md-6 to col-md-4 for three cards in a row -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD3x94yG41zvTVkMemjR0P8Em1MnH7WoHa1g&usqp=CAU"
+                            alt="Ground booking" style="height: 200px; object-fit: cover;">
+                        <a href="#!">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Book Your Ground</h4>
+                        <p class="card-text">Easily manage and allocate your sports facilities with our intuitive
+                            booking system.</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Features for Ground Booking -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8rq3T7GLf3bbqlI_U9vdP0QeIRsCF2e1AQA&usqp=CAU"
+                            alt="Availability calendar" style="height: 200px; object-fit: cover;">
+                        <a href="#!">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Availability Calendar</h4>
+                        <p class="card-text">Check real-time availability and schedule your activities with ease using
+                            our interactive calendar.</p>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="view overlay">
+                        <!-- Placeholder for the missing image in the Facility Management card -->
+                        <img class="card-img-top" src="data:image/jpeg;base64,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" alt="Facility management"
+                            style="height: 200px; object-fit: cover;">
+                        <a href="#!">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Facility Management</h4>
+                        <p class="card-text">Enhance the maintenance and scheduling of your facilities with our
+                            comprehensive management tools.</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Event Management (Adjusted for three cards in a row) -->
+    <section class="my-5">
+        <h3 class="h3 text-center mb-5">Event Management</h3>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg38hoTaPlWGZF1zGoh26PBLgRexKWpAACsQ&usqp=CAU"
+                            alt="Event management" style="height: 200px; object-fit: cover;">
+                        <a href="#!">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Manage Your Events</h4>
+                        <p class="card-text">Organize, promote, and track your events effortlessly, fostering increased
+                            community engagement.</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxOxBCgkatuiP0fiuHg6vLSpBpBPahIREdaw&usqp=CAU"
+                            alt="Member registration" style="height: 200px; object-fit: cover;">
+                        <a href="#!">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Member Registrations</h4>
+                        <p class="card-text">Simplify the process for members to register for events with our
+                            streamlined online system.</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top"
+                            src="https://assets-global.website-files.com/64206d52197145e43a302887/64271ad23761980fa3e115b5_Image%20(4).png"
+                            alt="Event analytics" style="height: 200px; object-fit: cover;">
+                        <a href="#!">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Event Analytics</h4>
+                        <p class="card-text">Gain insights into your events with analytics on participation, engagement,
+                            and feedback.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

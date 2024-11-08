@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>My Bookings</h3>
+<div class="form-group mt-3">
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+
+        <div class="alert {{ message.tags }}" role="alert">
+            {{ message }}
+        </div>
+
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+<div class="list-group mb-5">
+    {% for booking in bookings %}
+    <div class="list-group-item flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ booking.ground.name }}</h5>
+            <small>{{ booking.date }}</small>
+        </div>
+        <p class="mb-1">Time Slot: {{ booking.time_slot }}</p>
+        <a href='{% url "cancel_booking" booking.id %}' class="btn btn-danger btn-sm">Cancel Booking</a>
+    </div>
+    {% empty %}
+    <p>No bookings found.</p>
+    {% endfor %}
+</div>
+{% endblock %}

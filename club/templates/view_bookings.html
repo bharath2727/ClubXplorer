@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>My Activities</h2>
+<div class="container mt-3">
+    <div class="row">
+        <!-- Bookings Card -->
+        <div class="col-md-6">
+            <div class="card text-center mb-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-calendar-check"></i> My Bookings</h5>
+                    <p class="card-text">{{ bookings.count }} Bookings</p>
+                    <a href="{% url 'view_bookings' %}" class="btn btn-primary">View Bookings</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Events Card -->
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-calendar-alt"></i> Registered Events</h5>
+                    <p class="card-text">{{ event_registrations.count }} Events</p>
+                    <a href="{% url 'view_event_registrations' %}" class="btn btn-primary">View Events</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
